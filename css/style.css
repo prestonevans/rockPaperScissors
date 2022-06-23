@@ -70,19 +70,59 @@ h1 {
 }
 
 button {
+  position: relative;
   padding: 0.5rem 1rem;
   border: 0.125rem solid black;
   border-radius: 1em;
   background-color: transparent;
   color: black;
   font-size: 2rem;
+  transition: 0.1s ease;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.buttons button::before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -0.5rem;
+  right: 0.25rem;
+  border-left: 0.125rem solid black;
+  border-right: 0.125rem solid black;
+  border-radius: 1em;
+  transition: 0.3s ease;
+}
+.buttons button::after {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: 0.25rem;
+  border-top: 0.125rem solid black;
+  border-bottom: 0.125rem solid black;
+  border-radius: 1em;
+  transition: 0.2s ease;
+}
+.buttons button:hover {
+  background-color: rgba(116, 116, 116, 0.566);
+  color: white;
+  cursor: pointer;
+  transform: scale(1.05) translateY(-0.25rem);
+}
+.buttons button:hover::after {
+  transform: translateY(0.15rem) translateX(0.15rem);
+}
+.buttons button:hover::before {
+  transform: translate(-0.15rem);
 }
 
 .reset {
@@ -92,6 +132,39 @@ button {
 .reset button {
   color: salmon;
   border-color: salmon;
+  transition: 0.3s ease;
+}
+.reset button:hover {
+  color: white;
+  background-color: salmon;
+  cursor: pointer;
+  letter-spacing: 0.4em;
+}
+.reset button::after {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  top: -0.35rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: 0.25rem;
+  border-top: 0.125rem solid salmon;
+  border-bottom: 0.125rem solid salmon;
+  border-radius: 1em;
+  transition: 0.2s ease;
+}
+.reset button::before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -0.35rem;
+  right: -0.5rem;
+  border-left: 0.125rem solid salmon;
+  border-right: 0.125rem solid salmon;
+  border-radius: 1em;
+  transition: 0.3s ease;
 }
 
 .actions {
