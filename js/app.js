@@ -70,17 +70,17 @@ function determineWinner() {
     `;
 
     if (computerItem === userItem) {
-      messageDisplay.innerText = "It's a draw";
+      messageDisplay.innerText = "Draw";
       return;
     }
 
     if (winningPairs[userItem] === computerItem) {
       userDisplayScore.innerText = ++userScore;
-      messageDisplay.innerText = `You won I picked ${computerItem}`;
+      messageDisplay.innerText = `You won`;
       return;
     }
 
     computerDisplayScore.innerText = ++computerScore;
-    messageDisplay.innerText = `You lose I picked ${computerItem}`;
+    messageDisplay.innerText = `You lost`;
   }, TIMEOUT);
 }

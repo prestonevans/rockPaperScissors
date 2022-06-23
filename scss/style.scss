@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Kranky&display=swap');
 
+$font-small: clamp(1.25rem, 7vw, 4rem);
+$font-medium: clamp(3rem, 10vw, 6rem);
+
 * {
   border: 0;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Kranky', cursive;;
-}
-
-h1 {
-	position: absolute;
-	top: 4rem;
+  font-family: 'Kranky', cursive;
 }
 
 main {
@@ -18,61 +16,36 @@ main {
   background-image: url('../images/paper.jpeg');
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
   padding: 1rem;
 }
 
 .scoreboard {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  color: black;
   display: flex;
+  justify-content: flex-end;
+  color: black;
   gap: 2rem;
+  span {
+    font-size: $font-small;
+  }
 }
 
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  border: 0.125rem solid black;
-  border-radius: 1em;
-  background-color: transparent;
-  color: black;
-  font-size: 2rem;
-}
-
-.reset {
-  display: flex;
-  justify-content: center;
-}
-
-.reset button {
-  color: salmon;
-  border-color: salmon;
+h1 {
+  text-align: center;
+  font-size: $font-medium;
+  margin-bottom: 3rem;
 }
 
 .messages {
   position: absolute;
-  bottom: -0.5rem;
-  transform: translateY(100%);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: $font-small;
 }
 
-.actions {
-  position: relative;
-  width: 100%;
-}
 .items {
   width: 100%;
   max-width: 40rem;
+  margin-inline: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,7 +59,7 @@ button {
   }
 
   .fa-hand {
-    transform: rotate(90deg) scale(0.85,1);
+    transform: rotate(90deg) scale(0.85, 1);
   }
 
   .fa-hand:last-child {
@@ -106,45 +79,73 @@ button {
   }
 }
 
+button {
+  padding: 0.5rem 1rem;
+  border: 0.125rem solid black;
+  border-radius: 1em;
+  background-color: transparent;
+  color: black;
+  font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+  button {
+    color: salmon;
+    border-color: salmon;
+  }
+}
+
+.actions {
+  position: relative;
+  width: 100%;
+}
+
 .animation:first-child {
-	animation-name: countDownFirstChild;
-	animation-duration: 700ms;
-	animation-iteration-count: 3;
-	animation-timing-function: ease-out;
+  animation-name: countDownFirstChild;
+  animation-duration: 700ms;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-out;
 }
 
 .animation:last-child {
-	animation-name: countDownLastChild;
-	animation-duration: 700ms;
-	animation-iteration-count: 3;
-	animation-timing-function: ease-out;
-  }
+  animation-name: countDownLastChild;
+  animation-duration: 700ms;
+  animation-iteration-count: 3;
+  animation-timing-function: ease-out;
+}
 
 @keyframes countDownFirstChild {
   0% {
-	transform: rotate(90deg) translateX(0.35rem);
+    transform: rotate(90deg) translateX(0.35rem);
   }
   50% {
-	transform: rotate(90deg) translateX(-3.25rem);
-	  
+    transform: rotate(90deg) translateX(-3.25rem);
   }
   100% {
-	transform: rotate(90deg) translateX(0.35rem);
+    transform: rotate(90deg) translateX(0.35rem);
   }
 }
 
 @keyframes countDownLastChild {
-	0% {
-	  transform: rotate(90deg) scale(1, -1) translateX(0.35rem);
-	}
-	50% {
-	  transform: rotate(90deg) scale(1, -1) translateX(-3.25rem);
-		
-	}
-	100% {
-	  transform: rotate(90deg) scale(1, -1) translateX(0.35rem);
-	}
+  0% {
+    transform: rotate(90deg) scale(1, -1) translateX(0.35rem);
   }
+  50% {
+    transform: rotate(90deg) scale(1, -1) translateX(-3.25rem);
+  }
+  100% {
+    transform: rotate(90deg) scale(1, -1) translateX(0.35rem);
+  }
+}
 
 @media (max-width: 540px) {
   .buttons {
