@@ -13,7 +13,7 @@ const winningPairs = {
   scissors: 'paper',
 };
 
-const TIMEOUT = 700 * 3;
+const TIMEOUT = 700 * 3 - 100;
 
 let userScore = 0;
 let computerScore = 0;
