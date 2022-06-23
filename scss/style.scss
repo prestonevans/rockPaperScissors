@@ -111,16 +111,24 @@ button {
 
 .animation:first-child {
   animation-name: countDownFirstChild;
+  -webkit-animation-name: countDownFirstChild;
   animation-duration: 700ms;
+  -webkit-animation-duration: 700ms;
   animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 3;
   animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
 }
 
 .animation:last-child {
   animation-name: countDownLastChild;
+  -webkit-animation-name: countDownLastChild;
   animation-duration: 700ms;
+  -webkit-animation-duration: 700ms;
   animation-iteration-count: 3;
+  -webkit-animation-iteration-count: 3;
   animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
 }
 
 @keyframes countDownFirstChild {
