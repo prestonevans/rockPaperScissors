@@ -1,5 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Kranky&display=swap');
+
 * {
-	border: 0; 
-	padding: 0;
-	margin: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Kranky', cursive;;
+}
+
+h1 {
+	position: absolute;
+	top: 4rem;
+}
+
+main {
+  min-height: 100vh;
+  background-image: url('../images/paper.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.scoreboard {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: black;
+  display: flex;
+  gap: 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 0.125rem solid black;
+  border-radius: 1em;
+  background-color: transparent;
+  color: black;
+  font-size: 2rem;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+}
+
+.reset button {
+  color: salmon;
+  border-color: salmon;
+}
+
+.messages {
+  position: absolute;
+  bottom: -0.5rem;
+  transform: translateY(100%);
+}
+
+.actions {
+  position: relative;
+  width: 100%;
+}
+.items {
+  width: 100%;
+  max-width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  i {
+    color: rgba(116, 116, 116, 0.566);
+    font-size: clamp(4rem, 30vw, 12rem);
+    width: clamp(4rem, 30vw, 12rem);
+    height: clamp(4rem, 30vw, 12rem);
+  }
+
+  .fa-hand {
+    transform: rotate(90deg) scale(0.85,1);
+  }
+
+  .fa-hand:last-child {
+    transform: rotate(90deg) scale(0.85, -1);
+  }
+
+  .fa-hand-fist {
+    transform: rotate(90deg) translateX(0.35rem);
+  }
+
+  .fa-hand-fist:last-child {
+    transform: rotate(90deg) scale(1, -1) translateX(0.35rem);
+  }
+
+  .fa-hand-scissors:first-child {
+    transform: scale(-1, 1);
+  }
+}
+
+.animation:first-child {
+	animation-name: countDownFirstChild;
+	animation-duration: 700ms;
+	animation-iteration-count: 3;
+	animation-timing-function: ease-out;
+}
+
+.animation:last-child {
+	animation-name: countDownLastChild;
+	animation-duration: 700ms;
+	animation-iteration-count: 3;
+	animation-timing-function: ease-out;
+  }
+
+@keyframes countDownFirstChild {
+  0% {
+	transform: rotate(90deg) translateX(0.35rem);
+  }
+  50% {
+	transform: rotate(90deg) translateX(-3.25rem);
+	  
+  }
+  100% {
+	transform: rotate(90deg) translateX(0.35rem);
+  }
+}
+
+@keyframes countDownLastChild {
+	0% {
+	  transform: rotate(90deg) scale(1, -1) translateX(0.35rem);
+	}
+	50% {
+	  transform: rotate(90deg) scale(1, -1) translateX(-3.25rem);
+		
+	}
+	100% {
+	  transform: rotate(90deg) scale(1, -1) translateX(0.35rem);
+	}
+  }
+
+@media (max-width: 540px) {
+  .buttons {
+    flex-direction: column;
+  }
 }
