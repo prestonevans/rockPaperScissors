@@ -14,6 +14,7 @@ $transparentBlack: rgba(116, 116, 116, 0.566);
 }
 
 main {
+  min-height: -webkit-fill-available;
   min-height: 100vh;
   background-image: url('../images/paper.jpeg');
   background-repeat: no-repeat;
@@ -149,34 +150,34 @@ button {
       color: white;
       background-color: salmon;
       cursor: pointer;
-	  letter-spacing: .4em;
+      letter-spacing: 0.4em;
     }
-	&::after {
-		box-sizing: border-box;
-		content: '';
-		position: absolute;
-		top: -0.35rem;
-		bottom: -0.5rem;
-		left: -0.5rem;
-		right: 0.25rem;
-		border-top: 0.125rem solid salmon;
-		border-bottom: 0.125rem solid salmon;
-		border-radius: 1em;
-		transition: 0.2s ease;
-	  }
-	  &::before {
-		box-sizing: border-box;
-		content: '';
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: -0.35rem;
-		right: -0.5rem;
-		border-left: 0.125rem solid salmon;
-		border-right: 0.125rem solid salmon;
-		border-radius: 1em;
-		transition: 0.3s ease;
-	  }
+    &::after {
+      box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: -0.35rem;
+      bottom: -0.5rem;
+      left: -0.5rem;
+      right: 0.25rem;
+      border-top: 0.125rem solid salmon;
+      border-bottom: 0.125rem solid salmon;
+      border-radius: 1em;
+      transition: 0.2s ease;
+    }
+    &::before {
+      box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -0.35rem;
+      right: -0.5rem;
+      border-left: 0.125rem solid salmon;
+      border-right: 0.125rem solid salmon;
+      border-radius: 1em;
+      transition: 0.3s ease;
+    }
   }
 }
 
@@ -231,8 +232,12 @@ button {
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 38.25rem) {
   .buttons {
     flex-direction: column;
+	margin-left: .375rem;
+	button:hover {
+	margin-left: .125rem;
+	}
   }
 }
